@@ -73,11 +73,11 @@
     "AT-1094": {
       name: "Juliana Tavares", avatar: "JT",
       channel: "WhatsApp · +55 41 98801-3390",
-      sector: "Agenda", sla: "SLA 01:33", owner: "Ê-Bot (IA)",
+      sector: "Comercial", sla: "SLA 01:33", owner: "Ê-Bot (IA)",
       msgs: [
-        ["ai", "Ê-Bot · IA", "Seu atendimento de amanhã às 09h30 está confirmado.", "10:15"],
-        ["client", "", "Confirmo, obrigada.", "10:16"],
-        ["ai", "Ê-Bot · IA", "Combinado! Te lembro 1 h antes do horário.", "10:17"]
+        ["client", "", "Oi! A proposta que a gente pediu já está pronta?", "10:15"],
+        ["ai", "Ê-Bot · IA", "Olá, Juliana! Já gerei a proposta e enviei por aqui. Fica anexada no atendimento também.", "10:15"],
+        ["client", "", "Perfeito, obrigada!", "10:16"]
       ]
     },
     "AT-1086": {
@@ -94,9 +94,9 @@
 
   var NODE_INFO = {
     trigger: {
-      kind: "Gatilho", title: "D-1 do agendamento",
-      note: "Percorre a agenda do dia seguinte e inicia o fluxo para cada compromisso confirmado.",
-      fields: [["Agenda", "Consultas e visitas confirmadas"], ["Horário da disparada", "18:00 · fuso de São Paulo"], ["Condição", "status = confirmado"]]
+      kind: "Gatilho", title: "Proposta sem resposta",
+      note: "Percorre as propostas enviadas e inicia o follow-up para cada lead que ficou sem resposta.",
+      fields: [["Lista", "Propostas enviadas há mais de 48 h"], ["Horário da disparada", "18:00 · fuso de São Paulo"], ["Condição", "status = sem resposta"]]
     },
     search: {
       kind: "Ação", title: "Buscar cliente",
@@ -104,9 +104,9 @@
       fields: [["Origem dos dados", "CRM Ê-Bot · tempo real"], ["Campos lidos", "nome, telefone, última compra"], ["Sem resultado", "usa o primeiro nome do contato"]]
     },
     message: {
-      kind: "Mensagem", title: "Mensagem de confirmação",
+      kind: "Mensagem", title: "Mensagem de follow-up",
       note: "Modelo aprovado pela equipe, com variáveis preenchidas automaticamente.",
-      fields: [["Modelo", "“Seu atendimento é amanhã às {hora}”"], ["Canal", "WhatsApp · número principal"], ["Assinatura", "Nome do atendente responsável"]]
+      fields: [["Modelo", "“Ficou alguma dúvida sobre a proposta {nome}?”"], ["Canal", "WhatsApp · número principal"], ["Assinatura", "Nome do atendente responsável"]]
     },
     wait: {
       kind: "Espera", title: "Aguardar resposta",
@@ -114,14 +114,14 @@
       fields: [["Janela", "2 horas"], ["Reenvio", "1 vez, texto diferente"], ["Fora do expediente", "espera até 08:00"]]
     },
     condition: {
-      kind: "Condição", title: "Confirmou?",
+      kind: "Condição", title: "Respondeu?",
       note: "Lê a resposta do cliente e direciona o fluxo para o caminho certo.",
-      fields: [["Palavras-chave", "sim, confirmo, pode ser"], ["Sensível a acentos", "sim"], ["Sem resposta", "caminho: transferir"]]
+      fields: [["Palavras-chave", "sim, aceito, vale ligar"], ["Sensível a acentos", "sim"], ["Sem resposta", "caminho: transferir"]]
     },
     confirm: {
-      kind: "Sucesso", title: "Confirmar agendamento",
-      note: "Grava a confirmação na agenda e avisa a equipe que vai atender.",
-      fields: [["Destino", "Agenda do setor"], ["Notificação", "Alerta para o atendente"], ["Registro", "Histórico do cliente"]]
+      kind: "Sucesso", title: "Avançar no funil",
+      note: "Move o card no Kanban SDR e avisa o vendedor responsável pela negociação.",
+      fields: [["Destino", "Kanban SDR · Negociação"], ["Notificação", "Alerta para o vendedor"], ["Registro", "Histórico do cliente"]]
     },
     transfer: {
       kind: "Falha", title: "Transferir para atendimento",
@@ -549,6 +549,17 @@
       group.querySelectorAll("button").forEach(function (x) { x.classList.toggle("is-active", x === b); });
     });
   });
+
+  // modo "só canvas": oculta toolbar e inspetor para mostrar apenas o fluxo
+  var canvasToggle = document.getElementById("dmCanvasToggle");
+  if (canvasToggle) {
+    canvasToggle.addEventListener("click", function () {
+      var editor = canvasToggle.closest(".dm-editor");
+      if (!editor) return;
+      var on = editor.classList.toggle("is-canvas-only");
+      canvasToggle.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
 
   /* ------------------------------------------------------------------
      11. Init

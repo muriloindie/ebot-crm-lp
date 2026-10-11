@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ê-Bot | Como vender e atender melhor no WhatsApp?</title>
-  <meta name="description" content="Como centralizar atendimento, CRM, IA e API no WhatsApp? O Ê-Bot une Panel e API para organizar conversas, automatizar fluxos e integrar sistemas.">
+  <meta name="description" content="O Ê-Bot é o CRM da sua operação no WhatsApp: atendimento omnichannel, IA para atender e qualificar, sempre com protocolos, e API oficial da Meta para levar os dados aos seus sistemas.">
   <meta property="og:title" content="Ê-Bot | Atendimento, CRM e API para WhatsApp">
-  <meta property="og:description" content="Centralize conversas, qualifique leads com IA e conecte o WhatsApp ao seu ERP ou CRM com Ê-Bot Panel + Ê-Bot API.">
+  <meta property="og:description" content="Conheça o CRM que une atendimento, IA e API oficial da Meta em uma operação de vendas rastreável. Ê-Bot Panel + Ê-Bot API.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#3c4844">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
+
+  <noscript>
+    <style>
+      #splash { display: none !important; }
+      html.no-js .s-hero-reveal .hero-kicker,
+      html.no-js .s-hero-reveal .hero-title,
+      html.no-js .s-hero-reveal .hero-copy,
+      html.no-js .s-hero-reveal .hero-actions,
+      html.no-js .s-hero-reveal .hero-proof,
+      html.no-js .s-hero-reveal .iphone-stage { opacity: 1 !important; transform: none !important; }
+      html.no-js .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +34,12 @@
   <link rel="stylesheet" href="css/glassmorphism.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/painel-upgrade.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/dashboard-mock.css">
   <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css">
+  <script src="js/loader.js" defer></script>
 
   <style>
     :root {
@@ -871,6 +886,29 @@
   </style>
 </head>
 <body>
+  <!-- ===================== SPLASH — Carregando experiência Ê-Sistemas ===================== -->
+  <div class="splash" id="splash" role="status" aria-label="Carregando experiência Ê-Sistemas">
+    <div class="splash-inner">
+      <div class="splash-logo">
+        <svg viewBox="0 0 433.26 173.3" role="img" aria-label="Ê-Bot Panel" focusable="false">
+          <title>Ê-Bot Panel</title>
+          <path fill="#9abc1e" stroke="#3f4b48" stroke-width="20" stroke-miterlimit="66.67" d="M44.86,28.28h129.49c5.5,0,9.96,4.5,9.96,10.06v100.6c0,5.56-4.46,10.06-9.96,10.06H44.86c-5.5,0-9.96-4.5-9.96-10.06V38.34c0-5.56-44.82-54.03,9.96-10.06Z"/>
+          <ellipse fill="#ffffff" cx="74.74" cy="68.52" rx="9.96" ry="10.06"/>
+          <ellipse fill="#ffffff" cx="144.47" cy="68.52" rx="9.96" ry="10.06"/>
+          <path fill="none" stroke="#3f4b48" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" d="M10,68.52v40.24"/>
+          <path fill="none" stroke="#3f4b48" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" d="M209.21,68.52v40.24"/>
+          <path fill="#ffffff" d="M105.23,98.51s-13.42-.71-22.24-3.18-10.31,10.07-8.24,13.42,12.41,6.53,34.86,6.53,33.68-2.65,34.86-8.65c1.19-6-2.39-14.94-9.96-11.62-7.57,3.32-9.51,3.5-29.28,3.5Z"/>
+          <text fill="#3f4b48" font-size="71.31" transform="translate(292.08 94.3)"><tspan x="0" y="0">bot</tspan></text>
+          <text fill="#9abc1e" font-size="42" transform="translate(243.81 143.99)"><tspan x="0" y="0">&lt;</tspan><tspan class="wm-kern" x="24.48" y="0">P</tspan><tspan x="48.57" y="0">ANEL&gt;</tspan></text>
+          <text fill="#9abc1e" font-size="71.31" transform="translate(241.82 94.3)"><tspan x="0" y="0">ê</tspan></text>
+        </svg>
+      </div>
+      <span class="splash-eyebrow">Carregando experiência Ê-Sistemas</span>
+      <div class="splash-bar" aria-hidden="true"><i id="splashBarFill"></i></div>
+      <span class="splash-powered">powered by <b>Ê-Sistemas</b></span>
+    </div>
+  </div>
+
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="lp-header glass-header">
@@ -895,10 +933,14 @@
           <li><a href="#panel">Panel</a></li>
           <li><a href="#tour">Conheça o sistema</a></li>
           <li><a href="#api">API</a></li>
+          <li><a href="#quem-somos">Quem somos</a></li>
           <li><a href="#testimonials">Clientes</a></li>
         </ul>
       </nav>
-      <div class="desktop-cta"><button class="trigger-wa-modal btn btn-primary" type="button">Solicitar demonstração</button></div>
+      <div class="desktop-cta" style="display: flex; align-items: center; gap: 0.8rem;">
+        <span class="meta-seal meta-seal--nav" title="TechProvider Meta — parceiro oficial Meta"><span class="meta-seal__logo"><iconify-icon icon="simple-icons:meta" aria-hidden="true"></iconify-icon></span>TechProvider Meta<span class="meta-seal__check" aria-hidden="true">✓</span></span>
+        <button class="trigger-wa-modal btn btn-primary" type="button">Solicitar demonstração</button>
+      </div>
       <div class="hamburger" aria-hidden="true"><span></span><span></span><span></span></div>
     </div>
   </header>
@@ -906,22 +948,25 @@
   <main id="conteudo">
     <section class="hero-fusion">
       <div class="container grid grid-2 items-center hero-grid" style="gap: clamp(2rem, 5vw, 5rem);">
-        <div class="reveal reveal-left">
-          <div class="hero-kicker">Panel + API em uma só operação</div>
+        <div class="reveal reveal-left s-hero-reveal">
+          <div class="hero-badgeline">
+            <div class="hero-kicker">Panel + API em uma só operação</div>
+            <span class="meta-seal" title="API oficial do WhatsApp Business — TechProvider Meta"><span class="meta-seal__logo"><iconify-icon icon="simple-icons:meta" aria-hidden="true"></iconify-icon></span>TechProvider Meta<span class="meta-seal__check" aria-hidden="true">✓</span></span>
+          </div>
           <h1 class="hero-title h1">Como vender mais pelo WhatsApp? <span>Centralize, automatize e acompanhe tudo.</span></h1>
-          <p class="hero-copy">Por que sua equipe perde leads no atendimento? Porque conversas, CRM e sistemas ficam separados. O Ê-Bot responde esse gargalo com multiatendimento, IA, Kanban comercial e API para integrar WhatsApp ao seu ERP ou CRM.</p>
+          <p class="hero-copy">Por que sua equipe perde leads? Porque conversas, fichas e funil vivem separados. O Ê-Bot é o CRM que junta tudo isso — IA no multiatendimento, Kanban comercial e API oficial da Meta para o WhatsApp.</p>
           <div class="hero-actions">
             <button class="trigger-wa-modal btn btn-primary float-hover" type="button">Quero ver funcionando</button>
             <a class="text-link" href="#operacao">Entender a operação <span aria-hidden="true">→</span></a>
           </div>
-          <div class="hero-proof" aria-label="Indicadores de valor">
+          <div class="hero-proof reveal-stagger" aria-label="Indicadores de valor">
             <div class="proof-chip"><strong>24/7</strong><span>IA para triagem e respostas imediatas.</span></div>
             <div class="proof-chip"><strong>48h</strong><span>Setup orientado para iniciar a operação.</span></div>
-            <div class="proof-chip"><strong>1 API</strong><span>Mensagens, webhooks e eventos em tempo real.</span></div>
+            <div class="proof-chip"><strong>Omnichannel</strong><span>WhatsApp, redes sociais e telefonia em uma caixa.</span></div>
           </div>
         </div>
 
-        <div class="hero-visual reveal reveal-right" aria-label="Fluxo visual de atendimento e qualificação de lead">
+        <div class="hero-visual reveal reveal-right s-hero-reveal" aria-label="Fluxo visual de atendimento e qualificação de lead">
           <div class="iphone-stage">
             <div class="iphone-css">
               <span class="iphone-hardware-button volume-up" aria-hidden="true"></span>
@@ -939,7 +984,7 @@
                 </div>
                 <div class="phone-header">
                   <div class="phone-avatar"><iconify-icon icon="simple-icons:whatsapp" aria-hidden="true"></iconify-icon></div>
-                  <div><strong>Barbearia do Zé</strong><span>Ê-Bot online</span></div>
+                  <div><strong>NoteMax Store</strong><span>Ê-Bot online</span></div>
                 </div>
                 <div class="message-stack" id="hero-messages"></div>
                 <div class="phone-input-area"><div class="phone-input"></div></div>
@@ -953,7 +998,7 @@
               <h3>Ficha do cliente</h3>
               <div class="lead-row" id="lead-nome"><span>Nome</span><strong>—</strong></div>
               <div class="lead-row" id="lead-servico"><span>Serviço</span><strong>—</strong></div>
-              <div class="lead-row" id="lead-horario"><span>Horário</span><strong>—</strong></div>
+              <div class="lead-row" id="lead-horario"><span>Entrega</span><strong>—</strong></div>
               <div class="lead-row" id="lead-status"><span>Status</span><strong>—</strong></div>
             </article>
           </div>
@@ -966,7 +1011,7 @@
         <span class="section-eyebrow">Para quem precisa vender e atender melhor</span>
         <h2 class="section-heading h2">Uma resposta para empresas que cresceram mais rápido que o atendimento.</h2>
         <p class="section-lead">O público do Ê-Bot já recebe demanda pelo WhatsApp, mas sofre com conversas espalhadas, pouca rastreabilidade, atendentes sobrecarregados e sistemas que não conversam entre si.</p>
-        <div class="pain-grid">
+        <div class="pain-grid reveal-stagger">
           <article class="pain-card">
             <h3>O problema não é só responder mensagens.</h3>
             <p>É saber quem atendeu, em qual etapa o cliente está, qual automação foi disparada e se o ERP recebeu o evento certo. Sem essa visão, vendas escapam e o time opera no improviso.</p>
@@ -979,7 +1024,7 @@
           <div class="pain-list">
             <div class="pain-line"><i>1</i><div><strong>WhatsApp pessoal vira gargalo</strong><p class="text-small">Histórico perdido, troca de aparelhos e nenhum controle gerencial.</p></div></div>
             <div class="pain-line"><i>2</i><div><strong>Respostas manuais atrasam receita</strong><p class="text-small">Cobranças, confirmações e protocolos dependem de alguém copiar e colar.</p></div></div>
-            <div class="pain-line"><i>3</i><div><strong>CRM e ERP ficam desconectados</strong><p class="text-small">Sem API e webhooks, a equipe trabalha com dados atrasados.</p></div></div>
+            <div class="pain-line"><i>3</i><div><strong>Nenhum rastro do lead no CRM</strong><p class="text-small">Sem pipeline, a equipe não sabe em que etapa cada cliente está — nem o que cobrar hoje.</p></div></div>
           </div>
         </div>
         <div class="operation-media-grid">
@@ -991,10 +1036,10 @@
               <div class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v14l11-7-11-7z"/></svg></div>
             </div>
           </div>
-          <div class="fusion-strip" aria-label="Fluxo da solução">
-            <div class="fusion-step" data-step="1"><strong>Centraliza</strong><span>Todos os atendentes operam em um único painel com filas, setores e histórico.</span></div>
+          <div class="fusion-strip reveal-stagger" aria-label="Fluxo da solução">
+            <div class="fusion-step" data-step="1"><strong>Centraliza</strong><span>Atendentes, filas por setor e contexto da conversa reunidos em um mesmo painel.</span></div>
             <div class="fusion-step" data-step="2"><strong>Automatiza</strong><span>A IA faz triagem, qualifica leads, envia mensagens e cria tarefas no funil.</span></div>
-            <div class="fusion-step" data-step="3"><strong>Integra</strong><span>A API envia e recebe eventos do seu sistema, ERP, CRM ou rotina interna.</span></div>
+            <div class="fusion-step" data-step="3"><strong>Integra</strong><span>A API oficial da Meta leva os dados do Ê-Bot CRM aos sistemas da empresa em tempo real.</span></div>
           </div>
         </div>
       </div>
@@ -1007,14 +1052,14 @@
           <span class="pill-new">Interface nova · redesign 2026</span>
         </div>
         <h2 class="section-heading h2">A camada operacional para times comerciais, suporte e relacionamento.</h2>
-        <p class="section-lead">Organize conversas, distribua atendimentos, acompanhe o funil e dê contexto para cada pessoa da equipe antes de responder o cliente. Tudo em um painel com visual novo, tema claro/escuro e indicadores em tempo real.</p>
+        <p class="section-lead">Organize conversas, distribua atendimentos, acompanhe o funil e dê contexto para cada pessoa da equipe antes de responder o cliente. Tudo em um painel com protocolo por atendimento, indicadores e acompanhamento em tempo real.</p>
 
         <div class="panel-cta">
           <a class="btn btn-primary float-hover" href="#tour">Explorar o sistema por dentro</a>
           <span class="text-small" style="color: var(--muted);">Navegue pelas telas reais: dashboard, atendimentos, Kanban, CRM e automações.</span>
         </div>
 
-        <div class="feature-grid">
+        <div class="feature-grid reveal-stagger">
           <article class="feature-card">
             <div class="fs" aria-hidden="true">
               <div class="fs-body">
@@ -1043,11 +1088,11 @@
           <article class="feature-card">
             <div class="fs" aria-hidden="true">
               <div class="fs-body fs-chat">
-                <div class="fs-msg fs-msg--in"><b>Ana Paula</b><span>Consigo antecipar a instalação?</span></div>
+                <div class="fs-msg fs-msg--in"><b>Ana Paula</b><span>O Ê-Bot dá conta do meu atendimento sem travar a operação?</span></div>
                 <div class="fs-msg fs-msg--type" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="fs-msg fs-msg--ai"><b><iconify-icon icon="ph:robot"></iconify-icon> Ê-BOT · IA</b><span>Verifico a agenda agora. Qual o seu CEP?</span></div>
-                <div class="fs-msg fs-msg--out"><span>04171-030, aqui na Vila Mariana.</span></div>
-                <div class="fs-chips"><span class="fs-pill fs-pill--ok">IA resolveu</span><span class="fs-pill">transfere p/ humano</span></div>
+                <div class="fs-msg fs-msg--ai"><b><iconify-icon icon="ph:robot"></iconify-icon> Ê-BOT · IA</b><span>Dá, sim! Hoje, como as conversas são distribuídas entre a equipe?</span></div>
+                <div class="fs-msg fs-msg--out"><span>Cada um atende pelo próprio celular.</span></div>
+                <div class="fs-chips"><span class="fs-pill fs-pill--ok">IA registrou o lead</span><span class="fs-pill">transfere p/ humano</span></div>
               </div>
             </div>
             <h3>Triagem com IA</h3><p>O bot entende intenção, responde dúvidas simples e transfere para humanos quando a conversa pede negociação.</p>
@@ -1107,7 +1152,7 @@
                 </div>
               </div>
             </div>
-            <h3>Multiatendimento</h3><p>Mais de uma pessoa atende pelo mesmo número sem perder rastreabilidade nem controle de fila.</p>
+            <h3>Atendimento omnichannel</h3><p>Mais de uma pessoa atende pelo mesmo número sem perder rastreabilidade nem controle de fila.</p>
           </article>
 
           <article class="feature-card">
@@ -1166,36 +1211,90 @@
 
           <article class="feature-card">
             <div class="fs" aria-hidden="true">
-              <div class="fs-body fs-theme">
-                <div class="fs-flip-stage">
-                  <div class="fs-flip-pane is-light">
-                    <span class="fs-flip-top"><i></i><i></i><i></i><em>app.ebot.com.br</em></span>
-                    <span class="fs-flip-minis">
-                      <span class="fs-mini"><small>Atendimentos</small><b>1.284</b></span>
-                      <span class="fs-mini"><small>Resolvidos IA</small><b>73%</b></span>
-                    </span>
-                    <span class="fs-flip-line"></span>
-                    <span class="fs-flip-line is-short"></span>
-                  </div>
-                  <div class="fs-flip-pane is-dark">
-                    <span class="fs-flip-top"><i></i><i></i><i></i><em>app.ebot.com.br</em></span>
-                    <span class="fs-flip-minis">
-                      <span class="fs-mini"><small>Atendimentos</small><b>1.284</b></span>
-                      <span class="fs-mini"><small>Resolvidos IA</small><b>73%</b></span>
-                    </span>
-                    <span class="fs-flip-line"></span>
-                    <span class="fs-flip-line is-short"></span>
-                  </div>
-                  <span class="fs-flip-switch">
-                    <iconify-icon icon="ph:sun"></iconify-icon>
-                    <i class="fs-flip-thumb"></i>
-                    <iconify-icon icon="ph:moon"></iconify-icon>
-                  </span>
+              <div class="fs-body fs-ctx">
+                <div class="fs-ctx-summary">
+                  <b><iconify-icon icon="ph:sparkle"></iconify-icon>Resumo da conversa</b>
+                  <em>Ana quer antecipar a instalação. CEP 04171-030 · fibra 500 mega · janela na quinta às 14h.</em>
                 </div>
-                <div class="fs-acc"><i style="--c:#9abc1e"></i><i style="--c:#25D366"></i><i style="--c:#1D9BF0"></i><i style="--c:#F2793D"></i></div>
+                <div class="fs-msg fs-msg--in"><b>Ana Paula</b><span>Consigo antecipar a instalação ainda esta semana?</span></div>
+                <div class="fs-msg fs-msg--out fs-msg--suggest"><span>Consegui: quinta às 14h está livre na sua região. Posso reservar?</span></div>
+                <span class="fs-ctx-hint"><iconify-icon icon="ph:brain"></iconify-icon>Sugestão gerada com base no histórico, no CRM e na conversa atual</span>
               </div>
             </div>
-            <h3>Tema e aparência <span class="feature-flag feature-flag--inline">Novo</span></h3><p>Alterne entre claro e escuro, escolha o acento de cor, densidade e cantos — cada equipe configura o painel do seu jeito.</p>
+            <h3>IA contextual <span class="feature-flag feature-flag--inline">Novo</span></h3><p>Resumo de conversas e sugestão de respostas baseadas no contexto — a IA lê o histórico, o CRM e a conversa atual para preparar cada atendimento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CRM Ê-BOT (BLOCO EXCLUSIVO) ======================= -->
+    <section class="section surface-grid" id="crm">
+      <div class="container reveal">
+        <span class="section-eyebrow">CRM Ê-Bot</span>
+        <h2 class="section-heading h2">O Ê-Bot é o CRM da sua operação — não um acessório de outro sistema.</h2>
+        <p class="section-lead">Cadastro, contas, histórico e funil vivem junto do atendimento: o que a conversa descobre, o CRM registra. E a automação cobra o próximo passo de cada lead, sem depender da memória do vendedor.</p>
+
+        <div class="crm-grid reveal-stagger">
+          <article class="crm-card crm-card--feature">
+            <h3>Pipeline comercial conectado ao atendimento</h3>
+            <p>Do primeiro “quanto custa?” ao contrato assinado: cada conversa virá com dono, etapa e histórico — sem recopiar dados no WhatsApp pessoal.</p>
+            <div class="crm-pipeline" aria-hidden="true">
+              <div class="crm-pipeline__track">
+                <span class="crm-step"><i></i>Lead novo</span><span class="crm-arrow">→</span>
+                <span class="crm-step is-done"><i></i>Qualificado pela IA</span><span class="crm-arrow">→</span>
+                <span class="crm-step"><i></i>Proposta</span><span class="crm-arrow">→</span>
+                <span class="crm-step"><i></i>Follow-up</span><span class="crm-arrow">→</span>
+                <span class="crm-step is-done"><i></i>Fechado</span>
+              </div>
+              <div class="crm-pipeline__note"><iconify-icon icon="ph:timer" aria-hidden="true"></iconify-icon>Cada etapa com responsável, prazo e cadência definidos — o SLA recomeça quando o card avança.</div>
+            </div>
+          </article>
+
+          <article class="crm-card crm-card--dark">
+            <div class="crm-icon"><iconify-icon icon="ph:list-numbers" aria-hidden="true"></iconify-icon></div>
+            <h3>Cadência e funil de automação</h3>
+            <p>Jornadas automáticas por etapa: mensagens, tarefas e avisos que acompanham o lead até a decisão — no ritmo certo do funil.</p>
+            <div class="crm-cadence" aria-hidden="true">
+              <span><b>Etapa 1</b>Proposta enviada · registro no CRM</span>
+              <span><b>Etapa 2</b>Follow-up automático no WhatsApp</span>
+              <span><b>Etapa 3</b>Aviso ao gestor: lead parado sem resposta</span>
+            </div>
+          </article>
+
+          <article class="crm-card">
+            <div class="crm-icon"><iconify-icon icon="ph:book-open-text" aria-hidden="true"></iconify-icon></div>
+            <h3>Base de conhecimento</h3>
+            <p>Preços, políticas, catálogo e respostas oficiais cadastrados pela equipe. A IA usa esse material para responder certo — e nunca inventar.</p>
+          </article>
+
+          <article class="crm-card">
+            <div class="crm-icon"><iconify-icon icon="ph:phone-call" aria-hidden="true"></iconify-icon></div>
+            <h3>Telefonia no atendimento</h3>
+            <p>Ligações pelo WhatsApp e PABX para chamadas telefônicas, tudo registrado no mesmo ticket e na mesma ficha do cliente.</p>
+          </article>
+
+          <article class="crm-card">
+            <div class="crm-icon"><iconify-icon icon="ph:video-camera" aria-hidden="true"></iconify-icon></div>
+            <h3>Reunião no Meet, direto do CRM</h3>
+            <p>Agende sua reunião no Meet e compartilhe com seu lead no WhatsApp — o convite fica anexado ao protocolo do atendimento.</p>
+          </article>
+
+          <article class="crm-card">
+            <div class="crm-icon"><iconify-icon icon="ph:hash" aria-hidden="true"></iconify-icon></div>
+            <h3>Protocolo por atendimento</h3>
+            <p>Todo contato ganha um protocolo rastreável: quem atendeu, quando, em qual setor e qual foi a resolução.</p>
+          </article>
+
+          <article class="crm-card">
+            <div class="crm-icon"><iconify-icon icon="ph:activity" aria-hidden="true"></iconify-icon></div>
+            <h3>Acompanhamento em tempo real</h3>
+            <p>Painel ao vivo com atendimentos ativos, fila por setor, leads sem responsável e IA a postos — atualizado a cada poucos segundos.</p>
+          </article>
+
+          <article class="crm-card crm-card--dark">
+            <div class="crm-icon"><iconify-icon icon="ph:circuitry" aria-hidden="true"></iconify-icon></div>
+            <h3>Tecnologia própria Ê-Sistemas</h3>
+            <p>Plataforma desenvolvida e mantida pela Ê-Sistemas: evolução contínua, suporte direto e dados hospedados no seu servidor.</p>
           </article>
         </div>
       </div>
@@ -1206,8 +1305,8 @@
       <div class="container">
         <div class="tour-head reveal">
           <span class="section-eyebrow">Conheça o sistema</span>
-          <h2 class="section-heading h2">Navegue pelas telas do painel como se estivesse dentro.</h2>
-          <p class="section-lead">Clique nas abas para explorar cada módulo. Tudo abaixo é interativo: troque de tela, arraste cards, abra conversas e alterne entre claro e escuro.</p>
+          <h2 class="section-heading h2">Conheça nossa experiência.</h2>
+          <p class="section-lead">Clique nas abas para explorar cada módulo. Tudo abaixo é interativo: troque de tela, arraste cards, abra conversas e veja a operação acontecer.</p>
         </div>
 
         <div class="tour-tabs reveal" role="tablist" aria-label="Módulos do sistema">
@@ -1270,8 +1369,7 @@
                   </div>
                   <span class="dm-chip dm-chip--wa"><i class="dm-dot"></i>WhatsApp conectado</span>
                   <span class="dm-chip dm-chip--ai"><i class="dm-dot"></i>IA ativa</span>
-                  <button class="dm-iconbtn" id="dmTheme" type="button" aria-label="Alternar tema claro e escuro"><iconify-icon icon="ph:moon" aria-hidden="true"></iconify-icon></button>
-                  <span class="dm-user"><span class="dm-avatar dm-avatar--dark">RS</span><span>Rita Souza</span></span>
+                  <span class="dm-user"><span class="dm-avatar dm-avatar--dark dm-avatar--photo"><img src="assets/images/demo/avatar-rita.jpg" alt="Rita Souza"></span><span>Rita Souza</span></span>
                 </header>
 
                 <div class="dm-scroll" id="tourScreens">
@@ -1282,7 +1380,7 @@
                       <div>
                         <span class="dm-eyebrow">Visão geral</span>
                         <h2>Bom dia, Rita</h2>
-                        <p>Acompanhe a operação em tempo real: atendimentos, IA, agenda e vendas em um só lugar.</p>
+                        <p>Acompanhe a operação em tempo real: atendimentos, IA, funil e vendas em um só lugar.</p>
                       </div>
                       <div class="dm-seg" data-dash-seg>
                         <button type="button" class="is-active" data-set="0">Hoje</button>
@@ -1439,7 +1537,7 @@
                             <span class="dm-avatar">AP</span>
                             <span>
                               <span class="dm-qrow-top"><strong>Ana Paula</strong><small>10:42</small></span>
-                              <span class="dm-qrow-msg">Oi! Consigo antecipar a instalação para esta semana?</span>
+                              <span class="dm-qrow-msg">Oi! A proposta que a gente pediu já está pronta?</span>
                               <span class="dm-qrow-tags"><span class="dm-tag-mini dm-tag-mini--ia"><iconify-icon icon="ph:robot" aria-hidden="true"></iconify-icon>IA</span><span class="dm-tag-mini">Comercial</span><span class="dm-unread">3</span></span>
                             </span>
                           </button>
@@ -1471,8 +1569,8 @@
                             <span class="dm-avatar">JT</span>
                             <span>
                               <span class="dm-qrow-top"><strong>Juliana Tavares</strong><small>10:17</small></span>
-                              <span class="dm-qrow-msg">Meu agendamento de amanhã ainda está confirmado?</span>
-                              <span class="dm-qrow-tags"><span class="dm-tag-mini dm-tag-mini--ia"><iconify-icon icon="ph:robot" aria-hidden="true"></iconify-icon>IA</span><span class="dm-tag-mini">Agenda</span></span>
+                              <span class="dm-qrow-msg">A proposta do sistema já ficou pronta?</span>
+                              <span class="dm-qrow-tags"><span class="dm-tag-mini dm-tag-mini--ia"><iconify-icon icon="ph:robot" aria-hidden="true"></iconify-icon>IA</span><span class="dm-tag-mini">Comercial</span></span>
                             </span>
                           </button>
                           <button class="dm-qrow" type="button" data-ticket="AT-1086">
@@ -1511,10 +1609,10 @@
                         </div>
                         <div class="dm-chat-body" id="dmChatBody">
                           <span class="dm-day">Hoje</span>
-                          <div class="dm-msg dm-msg--client">Oi! Vi o plano de fibra no site e queria saber se consigo antecipar a instalação.<span class="dm-time">10:41</span></div>
-                          <div class="dm-msg dm-msg--ai"><span class="dm-who"><iconify-icon icon="ph:robot" aria-hidden="true"></iconify-icon>Ê-Bot · IA</span>Olá, Ana! Consigo verificar a agenda agora. Qual o seu CEP?<span class="dm-time">10:41</span></div>
-                          <div class="dm-msg dm-msg--client">04171-030, aqui na Vila Mariana.<span class="dm-time">10:42</span></div>
-                          <div class="dm-msg dm-msg--ai"><span class="dm-who"><iconify-icon icon="ph:robot" aria-hidden="true"></iconify-icon>Ê-Bot · IA</span>Temos janela na quinta às 14h. Confirma que quer antecipar para esse horário?<span class="dm-time">10:42</span></div>
+                          <div class="dm-msg dm-msg--client">Oi! Vi o site e queria entender se o Ê-Bot dá conta do meu atendimento sem travar a operação.<span class="dm-time">10:41</span></div>
+                          <div class="dm-msg dm-msg--ai"><span class="dm-who"><iconify-icon icon="ph:robot" aria-hidden="true"></iconify-icon>Ê-Bot · IA</span>Olá, Ana! Consigo te mostrar, sim. Hoje, como as conversas do WhatsApp são distribuídas entre a equipe?<span class="dm-time">10:41</span></div>
+                          <div class="dm-msg dm-msg--client">Misturado, cada um atende pelo próprio celular.<span class="dm-time">10:42</span></div>
+                          <div class="dm-msg dm-msg--ai"><span class="dm-who"><iconify-icon icon="ph:robot" aria-hidden="true"></iconify-icon>Ê-Bot · IA</span>Tem uma fila com contexto por setor, sem atendimento perdido no celular — e já registrei seus dados na ficha do CRM. Um consultor entra no detalhe do funil.<span class="dm-time">10:42</span></div>
                           <div class="dm-typing"><i></i><i></i><i></i></div>
                         </div>
                         <div class="dm-composer">
@@ -1522,7 +1620,7 @@
                             <button class="dm-iconbtn" type="button" aria-label="Respostas rápidas" aria-expanded="false"><iconify-icon icon="ph:lightning" aria-hidden="true"></iconify-icon></button>
                             <div class="dm-quick-list" role="menu">
                               <b>Respostas rápidas</b>
-                              <button type="button" role="menuitem">Confirmar agendamento</button>
+                              <button type="button" role="menuitem">Enviar catálogo</button>
                               <button type="button" role="menuitem">Enviar proposta</button>
                               <button type="button" role="menuitem">Transferir para humano</button>
                               <button type="button" role="menuitem">Encerrar atendimento</button>
@@ -1637,7 +1735,7 @@
                           <article class="dm-kanban-card" draggable="true" style="border-color: rgba(93,115,126,.3);">
                             <div class="dm-kanban-card-top"><span class="dm-id">#LD-2387</span><span class="dm-cardtag" style="background:rgba(93,115,126,.16); color:#5D737E;">demo</span></div>
                             <h5>Demonstração ao vivo</h5>
-                            <p>Agendada pelo robô para amanhã às 10h.</p>
+                            <p>Próximo passo indicado pelo robô: reunião amanhã às 10h.</p>
                             <span class="dm-client"><iconify-icon icon="ph:user" aria-hidden="true"></iconify-icon>Fernanda Lima</span>
                             <div class="dm-kanban-card-foot"><span class="dm-due"><iconify-icon icon="ph:video-camera" aria-hidden="true"></iconify-icon>amanhã, 10h</span><span class="dm-avatar" style="width:24px;height:24px;border-radius:8px;font-size:.58rem;">TT</span></div>
                           </article>
@@ -1797,8 +1895,8 @@
                           </article>
                           <article class="dm-kanban-card dm-crm-card" tabindex="0" style="border-color: rgba(93,115,126,.3);">
                             <div class="dm-kanban-card-top"><span class="dm-status"><i style="background:#5D737E"></i>Negociação</span><span class="dm-value">R$ 17,2k</span></div>
-                            <h5>Clínica Horizonte</h5>
-                            <span class="dm-company-line"><iconify-icon icon="ph:buildings" aria-hidden="true"></iconify-icon>Saúde · 60 agendas</span>
+                            <h5>Metalúrgica Horizonte</h5>
+                            <span class="dm-company-line"><iconify-icon icon="ph:buildings" aria-hidden="true"></iconify-icon>Indústria · 3 plantas</span>
                             <div class="dm-owner"><span class="dm-avatar">TT</span><span>Tiago Torres</span></div>
                             <span class="dm-next"><iconify-icon icon="ph:tag" aria-hidden="true"></iconify-icon>Ajustar desconto de 8%</span>
                             <div class="dm-crm-details">
@@ -1897,13 +1995,14 @@
                     <div class="dm-flow-toolbar">
                       <div class="dm-flow-name">
                         <span class="dm-ico" style="width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:rgba(var(--dt-primary),.1);color:rgb(var(--dt-primary));"><iconify-icon icon="ph:flow-arrow" aria-hidden="true"></iconify-icon></span>
-                        <span><strong>Confirmação de agendamento D-1</strong><small>7 passos · 1.284 execuções este mês</small></span>
+                        <span><strong>Cadência de follow-up de proposta</strong><small>7 passos · 1.284 execuções este mês</small></span>
                       </div>
                       <span class="dm-spacer"></span>
                       <div class="dm-flow-chips">
-                        <button type="button" class="is-active">Confirmação D-1</button>
+                        <button type="button" class="is-active">Follow-up de proposta</button>
                         <button type="button">Captura de lead</button>
                         <button type="button">Cobrança vencida</button>
+                        <button type="button" id="dmCanvasToggle" class="dm-flow-chip--canvas" title="Exibir apenas o canvas do fluxo"><iconify-icon icon="ph:tree-structure" aria-hidden="true"></iconify-icon>Só o canvas</button>
                       </div>
                       <span class="dm-btn dm-btn--ghost dm-btn--sm"><iconify-icon icon="ph:play" aria-hidden="true"></iconify-icon>Testar fluxo</span>
                       <span class="dm-btn dm-btn--primary dm-btn--sm"><iconify-icon icon="ph:floppy-disk" aria-hidden="true"></iconify-icon>Publicar</span>
@@ -1924,8 +2023,8 @@
                           <button class="dm-node is-active" type="button" data-node="trigger" style="left:20px; top:130px;">
                             <span class="dm-node-ico"><iconify-icon icon="ph:play-circle" aria-hidden="true"></iconify-icon></span>
                             <span class="dm-node-kind" style="color:#1DA851;"><i style="background:#1DA851;"></i>Gatilho</span>
-                            <strong>D-1 do agendamento</strong>
-                            <small>Dispara 24 h antes do horário marcado</small>
+                            <strong>Proposta sem resposta</strong>
+                            <small>Dispara 48 h após a proposta ficar sem resposta</small>
                           </button>
 
                           <button class="dm-node" type="button" data-node="search" style="left:220px; top:130px;">
@@ -1938,8 +2037,8 @@
                           <button class="dm-node" type="button" data-node="message" style="left:420px; top:130px;">
                             <span class="dm-node-ico"><iconify-icon icon="ph:whatsapp-logo" aria-hidden="true"></iconify-icon></span>
                             <span class="dm-node-kind" style="color:#25D366;"><i style="background:#25D366;"></i>Mensagem</span>
-                            <strong>Mensagem de confirmação</strong>
-                            <small>Modelo: “Seu atendimento é amanhã às 14h”</small>
+                            <strong>Mensagem de follow-up</strong>
+                            <small>Modelo: “Ficou alguma dúvida sobre a proposta?”</small>
                           </button>
 
                           <button class="dm-node" type="button" data-node="wait" style="left:620px; top:130px;">
@@ -1952,15 +2051,15 @@
                           <button class="dm-node" type="button" data-node="condition" style="left:820px; top:50px;">
                             <span class="dm-node-ico"><iconify-icon icon="ph:git-branch" aria-hidden="true"></iconify-icon></span>
                             <span class="dm-node-kind" style="color:#C97F12;"><i style="background:#C97F12;"></i>Condição</span>
-                            <strong>Confirmou?</strong>
-                            <small>Palavras-chave: sim, confirmo, pode ser</small>
+                            <strong>Respondeu?</strong>
+                            <small>Palavras-chave: sim, aceito, vale ligar</small>
                           </button>
 
                           <button class="dm-node" type="button" data-node="confirm" style="left:1020px; top:50px;">
                             <span class="dm-node-ico"><iconify-icon icon="ph:check-circle" aria-hidden="true"></iconify-icon></span>
                             <span class="dm-node-kind" style="color:#0B6B2E;"><i style="background:#0B6B2E;"></i>Sucesso</span>
-                            <strong>Confirmar agendamento</strong>
-                            <small>Atualiza agenda e avisa a equipe</small>
+                            <strong>Avançar no funil</strong>
+                            <small>Move o card no Kanban e avisa o vendedor</small>
                           </button>
 
                           <button class="dm-node" type="button" data-node="transfer" style="left:1020px; top:210px;">
@@ -1975,11 +2074,11 @@
                       <aside class="dm-inspector">
                         <article class="dm-card">
                           <span class="dm-insp-kind" id="dmInspKind">Gatilho</span>
-                          <h4 id="dmInspTitle">D-1 do agendamento</h4>
-                          <p class="dm-insp-note" id="dmInspNote">Percorre a agenda do dia seguinte e inicia o fluxo para cada compromisso confirmado.</p>
-                          <div class="dm-field"><label id="dmInspL1">Agenda</label><span class="dm-field-box" id="dmInspF1">Consultas e visitas confirmadas</span></div>
+                          <h4 id="dmInspTitle">Proposta sem resposta</h4>
+                          <p class="dm-insp-note" id="dmInspNote">Percorre as propostas enviadas e inicia o follow-up para cada lead que ficou sem resposta.</p>
+                          <div class="dm-field"><label id="dmInspL1">Lista</label><span class="dm-field-box" id="dmInspF1">Propostas enviadas há mais de 48 h</span></div>
                           <div class="dm-field"><label id="dmInspL2">Horário da disparada</label><span class="dm-field-box" id="dmInspF2">18:00 · fuso de São Paulo</span></div>
-                          <div class="dm-field"><label id="dmInspL3">Condição</label><span class="dm-field-box" id="dmInspF3">status = confirmado</span></div>
+                          <div class="dm-field"><label id="dmInspL3">Condição</label><span class="dm-field-box" id="dmInspF3">status = sem resposta</span></div>
                           <span class="dm-btn dm-btn--ghost dm-btn--sm" style="margin-top:.35rem;"><iconify-icon icon="ph:pencil" aria-hidden="true"></iconify-icon>Editar passo</span>
                         </article>
 
@@ -1989,8 +2088,8 @@
                           </div>
                           <div class="dm-flow-list">
                             <button class="dm-flow-item is-active" type="button">
-                              <span class="dm-flow-ico"><iconify-icon icon="ph:calendar-check" aria-hidden="true"></iconify-icon></span>
-                              <span><strong>Confirmação de agendamento D-1</strong><small>1.284 execuções · 74% confirmaram</small></span>
+                              <span class="dm-flow-ico"><iconify-icon icon="ph:paper-plane-tilt" aria-hidden="true"></iconify-icon></span>
+                              <span><strong>Follow-up de proposta</strong><small>1.284 execuções · 41% retomaram a conversa</small></span>
                             </button>
                             <button class="dm-flow-item" type="button">
                               <span class="dm-flow-ico"><iconify-icon icon="ph:funnel" aria-hidden="true"></iconify-icon></span>
@@ -2015,8 +2114,6 @@
         <div class="tour-hint reveal">
           <span><iconify-icon icon="ph:cursor-click" aria-hidden="true"></iconify-icon>Troque de módulo pelas abas ou pelo menu lateral</span>
           <span><iconify-icon icon="ph:hand-grabbing" aria-hidden="true"></iconify-icon>Arraste os cards do Kanban entre as etapas</span>
-          <span><iconify-icon icon="ph:chat-circle-dots" aria-hidden="true"></iconify-icon>Clique numa conversa para abri-la</span>
-          <span><iconify-icon icon="ph:moon" aria-hidden="true"></iconify-icon>Teste o tema claro e escuro</span>
         </div>
 
         <div class="tour-cta reveal">
@@ -2086,7 +2183,7 @@
           <article class="sector-card"><div class="case-icon case-sales"></div><b>Vendas consultivas</b><h3>Do lead ao fechamento</h3><p>Capture contatos, qualifique por IA, mova no Kanban e acione follow-ups automáticos.</p></article>
           <article class="sector-card"><div class="case-icon case-support"></div><b>Suporte e SAC</b><h3>Fila com contexto</h3><p>Direcione tickets por setor, reduza espera e preserve histórico em cada conversa.</p></article>
           <article class="sector-card"><div class="case-icon case-money"></div><b>Financeiro</b><h3>Cobranças e lembretes</h3><p>Envie vencimentos, confirmações de pagamento e links seguros com retorno de status.</p></article>
-          <article class="sector-card"><div class="case-icon case-clinic"></div><b>Clínicas e agenda</b><h3>Confirmação automática</h3><p>Reduza faltas com lembretes, confirmações e reagendamentos por mensagens integradas.</p></article>
+          <article class="sector-card"><div class="case-icon case-real"></div><b>Imobiliárias</b><h3>Do contato à visita</h3><p>Capture interessados, envie fotos no WhatsApp, confirme visitas e acompanhe a negociação com histórico completo.</p></article>
           <article class="sector-card"><div class="case-icon case-industry"></div><b>Indústria e serviços</b><h3>Protocolo rastreável</h3><p>Notifique andamento de pedidos, abertura de chamados e movimentações operacionais.</p></article>
           <article class="sector-card"><div class="case-icon case-commerce"></div><b>E-commerce local</b><h3>Pós-venda ativo</h3><p>Atualize pedido, entrega e suporte com conversas que também alimentam seu CRM.</p></article>
         </div>
@@ -2099,10 +2196,10 @@
         <span class="section-eyebrow">Implantação</span>
         <h2 class="section-heading h2">Um caminho prático para sair do improviso sem travar a operação.</h2>
         <div class="timeline">
-          <div class="timeline-item"><div><strong>Diagnóstico da operação</strong><span>Mapeamos setores, filas, principais mensagens e integrações necessárias.</span></div><time>Dia 1</time></div>
-          <div class="timeline-item"><div><strong>Configuração do Panel</strong><span>Criamos usuários, funis, tags, departamentos, IA inicial e regras de atendimento.</span></div><time>Dia 2</time></div>
-          <div class="timeline-item"><div><strong>API e webhooks</strong><span>Conectamos endpoints críticos ao CRM, ERP ou sistema interno da empresa.</span></div><time>Dia 3+</time></div>
-          <div class="timeline-item"><div><strong>Treinamento e ajustes</strong><span>Validamos fluxos reais com a equipe e refinamos mensagens para conversão.</span></div><time>Contínuo</time></div>
+          <div class="timeline-item"><div><strong>Diagnóstico da operação</strong><span>Mapeamos setores, filas, principais mensagens e integrações necessárias.</span></div><time>Etapa 1</time></div>
+          <div class="timeline-item"><div><strong>Configuração do Panel</strong><span>Criamos usuários, funis, tags, departamentos, IA inicial e regras de atendimento.</span></div><time>Etapa 2</time></div>
+          <div class="timeline-item"><div><strong>API e webhooks</strong><span>Conectamos endpoints críticos ao CRM, ERP ou sistema interno da empresa.</span></div><time>Etapa 3</time></div>
+          <div class="timeline-item"><div><strong>Treinamento e ajustes</strong><span>Validamos o seu fluxo com a equipe real e refinamos mensagens para conversão.</span></div><time>Etapa 4</time></div>
         </div>
       </div>
     </section>
@@ -2118,8 +2215,52 @@
         </div>
         <div class="security-grid">
           <article class="security-card"><div class="security-icon"><iconify-icon icon="ph:fingerprint-fill" aria-hidden="true"></iconify-icon></div><h3>Controle de acesso</h3><p>Organize usuários, setores e responsabilidades para evitar que conversas fiquem em celulares pessoais ou sem dono.</p></article>
-          <article class="security-card"><div class="security-icon"><iconify-icon icon="ph:clock-counter-clockwise-fill" aria-hidden="true"></iconify-icon></div><h3>Histórico rastreável</h3><p>Preserve contexto de atendimento, status e interações importantes para auditoria interna e gestão da operação.</p></article>
+          <article class="security-card"><div class="security-icon"><iconify-icon icon="ph:clock-counter-clockwise-fill" aria-hidden="true"></iconify-icon></div><h3>Histórico rastreável</h3><p>Preserve contexto de atendimento, status e interações importantes para a gestão e a continuidade da operação.</p></article>
           <article class="security-card"><div class="security-icon"><iconify-icon icon="ph:shield-check-fill" aria-hidden="true"></iconify-icon></div><h3>Processos documentados</h3><p>Fluxos, webhooks e automações reduzem improviso e ajudam a padronizar o tratamento das informações.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= QUEM SOMOS (INSTITUCIONAL) ======================= -->
+    <section class="section surface-waves" id="quem-somos">
+      <div class="container historia-grid reveal">
+        <div class="historia-copy">
+          <span class="section-eyebrow">Quem somos</span>
+          <h2 class="section-heading h2">Somos a Ê-Sistemas — quem desenvolve o Ê-Bot de ponta a ponta.</h2>
+          <p class="section-lead">Não somos um revendedor de plataforma: o Ê-Bot nasceu dentro da Ê-Sistemas e evolui junto com a operação de quem vende e atende pelo WhatsApp todos os dias. Um produto feito perto do cliente, com suporte direto de quem programa.</p>
+
+          <div class="historia-points reveal-stagger">
+            <div class="historia-point">
+              <i><iconify-icon icon="ph:users-three" aria-hidden="true"></iconify-icon></i>
+              <div><strong>Perto do cliente</strong><span>Atendimento direto com quem usa o sistema: do primeiro contato ao suporte, sem camada intermediária.</span></div>
+            </div>
+            <div class="historia-point">
+              <i><iconify-icon icon="ph:code" aria-hidden="true"></iconify-icon></i>
+              <div><strong>Tecnologia própria</strong><span>Nossa equipe desenha, desenvolve e mantém a plataforma — cada melhoria nasce de uma demanda real.</span></div>
+            </div>
+            <div class="historia-point">
+              <i><iconify-icon icon="ph:trend-up" aria-hidden="true"></iconify-icon></i>
+              <div><strong>Evolução contínua</strong><span>O feedback do atendimento vira produto: ciclos curtos de melhoria, versão após versão.</span></div>
+            </div>
+          </div>
+
+          <div class="historia-badgeline">
+            <span class="hero-kicker">Tecnologia própria Ê-Sistemas</span>
+            <span class="meta-seal" title="TechProvider Meta — parceiro oficial Meta"><span class="meta-seal__logo"><iconify-icon icon="simple-icons:meta" aria-hidden="true"></iconify-icon></span>TechProvider Meta<span class="meta-seal__check" aria-hidden="true">✓</span></span>
+          </div>
+        </div>
+
+        <div class="collage" aria-label="Fotos do time e da história do Ê-Bot">
+          <figure class="is-tall" tabindex="0" role="button" aria-label="Ampliar foto: O time do Ê-Bot"><img src="assets/images/nossa_historia/nossa_historia_1.jpeg" alt="O time do Ê-Bot reunido" loading="lazy"><figcaption>O time do Ê-Bot</figcaption></figure>
+          <figure tabindex="0" role="button" aria-label="Ampliar foto: No dia a dia da operação"><img src="assets/images/nossa_historia/nossa_historia_3.jpg" alt="Momento do dia a dia da equipe Ê-Bot" loading="lazy"><figcaption>No dia a dia da operação</figcaption></figure>
+          <figure class="is-top" tabindex="0" role="button" aria-label="Ampliar foto: Histórias que constroem o produto"><img src="assets/images/nossa_historia/nossa_historia_2.jpeg" alt="Encontro do time Ê-Sistemas" loading="lazy"><figcaption>Histórias que constroem o produto</figcaption></figure>
+          <figure class="is-wide" tabindex="0" role="button" aria-label="Ampliar foto: Pedro · Ê-Sistemas"><img src="assets/images/nossa_historia/pedro-google.webp" alt="Pedro, à frente da Ê-Sistemas" loading="lazy"><figcaption>Pedro · Ê-Sistemas</figcaption></figure>
+          <figure class="is-top" tabindex="0" role="button" aria-label="Ampliar foto: Crescendo junto com parceiros"><img src="assets/images/nossa_historia/nossa_historia_6.jpg" alt="Equipe Ê-Sistemas em outro momento" loading="lazy"><figcaption>Crescendo junto com parceiros</figcaption></figure>
+          <div class="collage-tile">
+            <img class="esi-mark" src="assets/images/esistemas_logo.avif" alt="" aria-hidden="true" loading="lazy">
+            <strong>Desenvolvido pela Ê-Sistemas</strong>
+            <span>Evolução contínua, suporte direto de quem programa e dados hospedados no seu servidor.</span>
+          </div>
         </div>
       </div>
     </section>
@@ -2127,13 +2268,18 @@
     <section class="section testimonials-section surface-grid" id="testimonials">
       <div class="container reveal">
         <span class="section-eyebrow">Depoimentos</span>
-        <h2 class="section-heading h2">Operações que trocaram conversas soltas por processos rastreáveis.</h2>
+        <h2 class="section-heading h2">Parceiros e clientes que trocaram conversas soltas por processos rastreáveis.</h2>
         <div class="swiper testimonials-swiper">
           <div class="swiper-wrapper">
             <article class="swiper-slide testimonial-card"><div class="testimonial-head"><img src="assets/images/testimonials/marina-costa.jpg" alt="Marina Costa"><div><strong>Marina Costa</strong><span>Gestora Comercial</span></div></div><div class="stars">★★★★★</div><p>O maior ganho foi enxergar o funil do WhatsApp. Antes cada atendente tinha seu jeito; agora temos fila, contexto e acompanhamento.</p></article>
-            <article class="swiper-slide testimonial-card"><div class="testimonial-head"><img src="assets/images/testimonials/renato-alves.jpg" alt="Renato Alves"><div><strong>Renato Alves</strong><span>Operações</span></div></div><div class="stars">★★★★★</div><p>Conectamos notificações do ERP pela API e reduzimos muitas mensagens manuais de status, cobrança e confirmação.</p></article>
+            <article class="swiper-slide testimonial-card"><div class="testimonial-head"><img src="assets/images/testimonials/renato-alves.jpg" alt="Renato Alves"><div><strong>Renato Alves</strong><span>Gestão de Integrações</span></div></div><div class="stars">★★★★★</div><p>Conectamos notificações do ERP pela API e reduzimos muitas mensagens manuais de status, cobrança e confirmação.</p></article>
             <article class="swiper-slide testimonial-card"><div class="testimonial-head"><img src="assets/images/testimonials/bianca-moura.jpg" alt="Bianca Moura"><div><strong>Bianca Moura</strong><span>Relacionamento</span></div></div><div class="stars">★★★★★</div><p>A triagem com IA ajudou o suporte a separar urgências e mandar cada cliente para o setor correto sem perder histórico.</p></article>
             <article class="swiper-slide testimonial-card"><div class="testimonial-head"><img src="assets/images/testimonials/gustavo-nery.jpg" alt="Gustavo Nery"><div><strong>Gustavo Nery</strong><span>Diretor Comercial</span></div></div><div class="stars">★★★★★</div><p>O Kanban SDR deixou claro quais propostas estavam paradas. A equipe passou a trabalhar follow-up com muito mais controle.</p></article>
+            <!-- Duplicatas para o loop do carrossel (leitores de tela ignoram) -->
+            <article class="swiper-slide testimonial-card" aria-hidden="true" tabindex="-1"><div class="testimonial-head"><img src="assets/images/testimonials/marina-costa.jpg" alt=""><div><strong>Marina Costa</strong><span>Gestora Comercial</span></div></div><div class="stars">★★★★★</div><p>O maior ganho foi enxergar o funil do WhatsApp. Antes cada atendente tinha seu jeito; agora temos fila, contexto e acompanhamento.</p></article>
+            <article class="swiper-slide testimonial-card" aria-hidden="true" tabindex="-1"><div class="testimonial-head"><img src="assets/images/testimonials/renato-alves.jpg" alt=""><div><strong>Renato Alves</strong><span>Gestão de Integrações</span></div></div><div class="stars">★★★★★</div><p>Conectamos notificações do ERP pela API e reduzimos muitas mensagens manuais de status, cobrança e confirmação.</p></article>
+            <article class="swiper-slide testimonial-card" aria-hidden="true" tabindex="-1"><div class="testimonial-head"><img src="assets/images/testimonials/bianca-moura.jpg" alt=""><div><strong>Bianca Moura</strong><span>Relacionamento</span></div></div><div class="stars">★★★★★</div><p>A triagem com IA ajudou o suporte a separar urgências e mandar cada cliente para o setor correto sem perder histórico.</p></article>
+            <article class="swiper-slide testimonial-card" aria-hidden="true" tabindex="-1"><div class="testimonial-head"><img src="assets/images/testimonials/gustavo-nery.jpg" alt=""><div><strong>Gustavo Nery</strong><span>Diretor Comercial</span></div></div><div class="stars">★★★★★</div><p>O Kanban SDR deixou claro quais propostas estavam paradas. A equipe passou a trabalhar follow-up com muito mais controle.</p></article>
           </div>
         </div>
       </div>
@@ -2173,6 +2319,13 @@
         <div style="flex: 1; min-width: 170px;"><h4 style="color: white; margin-bottom: 1rem;">Ferramentas</h4><ul class="text-small" style="display: grid; gap: 0.75rem;"><li><a href="https://êbot.com" target="_blank" rel="noopener">Site oficial Ê-Bot</a></li><li><a href="https://êbot.com/produtos.html" target="_blank" rel="noopener">Ê-Bot Clinical</a></li><li><a href="https://êbot.com/produtos.html" target="_blank" rel="noopener">Ê-Bot Explorer</a></li></ul></div>
         <div style="flex: 1; min-width: 150px;"><h4 style="color: white; margin-bottom: 1rem;">Contato</h4><ul class="text-small" style="display: grid; gap: 0.75rem;"><li><a href="tel:+5546999130505">(46) 99913-0505</a></li><li><a href="mailto:comercial.ebot@esistemas.dev.br">comercial.ebot@esistemas.dev.br</a></li><li><a href="#conteudo">Voltar ao topo</a></li></ul></div>
       </div>
+      <!-- VALIDAR COM COMPLIANCE: exibir somente as certificações/atestados confirmados -->
+      <div class="footer-trust">
+        <span><strong>Conformidade e certificações</strong> — selos em validação antes de exibir publicamente.</span>
+        <span class="iso-pill" title="Validação pendente com o time de compliance">ISO 9001 · em validação</span>
+        <span class="iso-pill" title="Validação pendente com o time de compliance">ISO 27001 · em validação</span>
+        <span class="iso-pill" title="Atestado de conformidade em análise jurídica">LGPD · atestado em análise</span>
+      </div>
       <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem;"><span>&copy; 2024-2025 Ê-Sistemas. Todos os direitos reservados.</span><span>Atendimento, CRM, IA e API para WhatsApp.</span></div>
     </div>
   </footer>
@@ -2190,6 +2343,14 @@
     </div>
   </div>
 
+  <div class="collage-lightbox" id="collageLightbox" role="dialog" aria-modal="true" aria-label="Visualização da foto" aria-hidden="true">
+    <button class="collage-lightbox__close" id="lightboxClose" type="button" aria-label="Fechar visualização">✕</button>
+    <figure class="collage-lightbox__card">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+  </div>
+
   <div class="video-modal" id="videoModal">
     <div class="video-modal-card" id="videoModalCard">
       <div class="video-modal-head">
@@ -2204,12 +2365,21 @@
     </div>
   </div>
 
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Aviso de cookies" hidden>
+    <p class="cookie-banner__text"><strong>Usamos cookies</strong> para melhorar sua experiência, medir o desempenho do site e personalizar conteúdo. Você pode aceitar todos ou manter apenas o essencial. <button class="pdf-open" type="button" data-pdf="./assets/pdf/ebot_politica_privacidade.pdf" data-title="Política de Privacidade Ê-Bot" data-download="ebot_politica_privacidade.pdf">Ler a política de privacidade</button></p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn-outline" type="button" data-cookie="essential">Só essenciais</button>
+      <button class="btn btn-primary" type="button" data-cookie="all">Aceito todos</button>
+    </div>
+  </div>
+
   <a class="floating-wa" href="https://wa.me/5546991130554?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <iconify-icon icon="simple-icons:whatsapp" aria-hidden="true"></iconify-icon>
   </a>
 
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
   <script src="assets/vendor/swiper-bundle.min.js"></script>
+  <script src="js/cookies.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="js/env-config.js"></script>
   <script src="js/chat-widget.js?v=5"></script>
@@ -2236,25 +2406,25 @@
       const heroMessages = document.getElementById('hero-messages');
       if (heroMessages) {
         const conversation = [
-          { text: "Boa tarde! Quero marcar um horário pra cortar o cabelo hoje.", out: false },
-          { text: "Boa tarde! Eu sou a IA da Barbearia do Zé. Posso agendar pra você. Qual seu nome?", out: true },
+          { text: "Boa tarde! Quanto custa o notebook Pro 15 de vocês?", out: false },
+          { text: "Boa tarde! Sou a IA da NoteMax Store. O Pro 15 sai R$ 3.499 à vista hoje. Anoto seu nome na ficha? Como você se chama?", out: true },
           { text: "Lucas Almeida.", out: false },
-          { text: "Perfeito, Lucas. Você quer só corte ou corte + barba?", out: true },
-          { text: "Corte + barba. Tem horário às 18h?", out: false },
-          { text: "Tem sim. Vou reservar hoje às 18h. Posso confirmar nesse número?", out: true },
-          { text: "Pode confirmar, é meu WhatsApp mesmo.", out: false },
-          { text: "Confirmado: Lucas Almeida, hoje às 18h, corte + barba. Já salvei tudo na ficha para o dono da barbearia acompanhar depois.", out: true }
+          { text: "Perfeito, Lucas. Quer ver os modelos com desconto à vista que chegaram essa semana?", out: true },
+          { text: "Quero sim, me manda.", out: false },
+          { text: "Mandei! Já criei sua ficha no CRM com nome, contato e interesse. O vendedor continua o atendimento daqui.", out: true },
+          { text: "Legal! Aí aparece tudo no mesmo chat, né?", out: false },
+          { text: "Isso mesmo: Lucas Almeida, notebook Pro 15. Tudo registrado na ficha para a equipe de vendas acompanhar depois.", out: true }
         ];
 
         const leadUpdates = [
           { nome: "—", servico: "—", horario: "—", status: "Novo atendimento" },
           { nome: "—", servico: "—", horario: "—", status: "Coletando nome" },
           { nome: "Lucas Almeida", servico: "—", horario: "—", status: "Lead identificado" },
-          { nome: "Lucas Almeida", servico: "Corte + Barba", horario: "—", status: "Serviço escolhido" },
-          { nome: "Lucas Almeida", servico: "Corte + Barba", horario: "Hoje, 18h", status: "Agendando" },
-          { nome: "Lucas Almeida", servico: "Corte + Barba", horario: "Hoje, 18h", status: "Aguardando confirmação" },
-          { nome: "Lucas Almeida", servico: "Corte + Barba", horario: "Hoje, 18h", status: "WhatsApp confirmado" },
-          { nome: "Lucas Almeida", servico: "Corte + Barba", horario: "Hoje, 18h", status: "Agendado" }
+          { nome: "Lucas Almeida", servico: "Notebook Pro 15", horario: "—", status: "Interesse identificado" },
+          { nome: "Lucas Almeida", servico: "Notebook Pro 15", horario: "—", status: "Catálogo enviado" },
+          { nome: "Lucas Almeida", servico: "Notebook Pro 15", horario: "A combinar", status: "Lead salvo no CRM" },
+          { nome: "Lucas Almeida", servico: "Notebook Pro 15", horario: "A combinar", status: "Contato em um só chat" },
+          { nome: "Lucas Almeida", servico: "Notebook Pro 15", horario: "A combinar", status: "Lead qualificado" }
         ];
 
         const leadNome = document.querySelector('#lead-nome strong');
@@ -2287,9 +2457,9 @@
           if (leadHorario) leadHorario.textContent = data.horario;
           if (leadStatus) leadStatus.textContent = data.status;
           if (leadScore) {
-            if (data.status === 'Agendado') leadScore.textContent = 'Agendamento confirmado';
+            if (data.status === 'Lead qualificado') leadScore.textContent = 'Lead qualificado';
             else if (data.status === 'Novo atendimento') leadScore.textContent = 'Novo lead';
-            else if (data.status === 'WhatsApp confirmado') leadScore.textContent = 'Contato validado';
+            else if (data.status === 'Contato em um só chat') leadScore.textContent = 'Tudo no mesmo lugar';
             else leadScore.textContent = 'Lead em atendimento';
           }
         };
@@ -2414,14 +2584,13 @@
 
       if (window.Swiper) {
         new Swiper('.testimonials-swiper', {
-          loop: false,
-          rewind: true,
-          freeMode: true,
+          loop: true,
           grabCursor: true,
           speed: 5200,
           slidesPerView: 1.08,
           spaceBetween: 16,
-          autoplay: { delay: 0, disableOnInteraction: false },
+          autoplay: { delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true },
+          a11y: { enabled: false },
           breakpoints: { 700: { slidesPerView: 2.1 }, 1024: { slidesPerView: 3.15 } }
         });
       }
@@ -2519,6 +2688,46 @@
       if (pdfClose) pdfClose.addEventListener('click', closePdfModal);
       if (pdfModal) pdfModal.addEventListener('click', (e) => { if (e.target === pdfModal) closePdfModal(); });
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && pdfModal && pdfModal.classList.contains('active')) closePdfModal(); });
+
+      // Lightbox das fotos "Quem somos" — entradas/saídas coreografadas
+      const lightbox = document.getElementById('collageLightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const lightboxClose = document.getElementById('lightboxClose');
+      let lightboxReturnFocus = null;
+
+      const openLightbox = (figure) => {
+        if (!lightbox) return;
+        const img = figure.querySelector('img');
+        const caption = figure.querySelector('figcaption');
+        if (img) {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+        }
+        if (lightboxCaption) lightboxCaption.textContent = caption ? caption.textContent : '';
+        lightboxReturnFocus = figure;
+        lightbox.setAttribute('aria-hidden', 'false');
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        if (lightboxClose) lightboxClose.focus();
+      };
+      const closeLightbox = () => {
+        if (!lightbox) return;
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lightboxReturnFocus) { lightboxReturnFocus.focus(); lightboxReturnFocus = null; }
+      };
+
+      document.querySelectorAll('.collage figure[tabindex="0"]').forEach((figure) => {
+        figure.addEventListener('click', () => openLightbox(figure));
+        figure.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(figure); }
+        });
+      });
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      if (lightbox) lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) closeLightbox(); });
     });
   </script>
 </body>
