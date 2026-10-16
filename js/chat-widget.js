@@ -98,7 +98,7 @@ A função de renderização Replacehed substitui automaticamente o texto [BOTAO
       msgDiv.style.marginLeft = 'auto';
       msgDiv.style.flexDirection = 'row-reverse';
       msgDiv.innerHTML = `
-        <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--dark-header, #2f3835); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; font-weight: bold;">VC</div>
+        <div aria-hidden="true" style="width: 46px; height: 46px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #3C5A45; box-shadow: 0 6px 16px rgba(60,72,68,0.2);"><iconify-icon icon="ph:user-fill" style="font-size: 1.62rem; color: #E3F2C7;"></iconify-icon></div>
         <div style="background: var(--primary, #88a72f); color: white; padding: 1rem 1.25rem; border-radius: 16px 0 16px 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-size: 0.95rem; line-height: 1.5; word-wrap: break-word;">
           ${escapeHtml(text)}
         </div>
@@ -106,9 +106,7 @@ A função de renderização Replacehed substitui automaticamente o texto [BOTAO
     } else {
       const botImgSrc = chatContainer.querySelector('img') ? chatContainer.querySelector('img').src : '';
       msgDiv.innerHTML = `
-        <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary, #88a72f); flex-shrink: 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-          <img src="${botImgSrc}" alt="Icon" style="width: 18px; height: 18px; object-fit: contain;">
-        </div>
+        <img src="${botImgSrc}" alt="Ê-Bot" width="46" height="46" style="width: 46px; height: 46px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 8px 14px rgba(60,72,68,0.16));">
         <div class="bot-msg-content" style="background: white; padding: 1rem 1.25rem; border-radius: 0 16px 16px 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-size: 0.95rem; color: var(--dark, #333); line-height: 1.5; word-wrap: break-word;">
           ${text === 'Pensando...' ? '<span class="typing-dots"><span>.</span><span>.</span><span>.</span></span>' : renderMarkdown(text)}
         </div>
