@@ -785,8 +785,10 @@ body.splash-lock { overflow: hidden; }
 
 .crm-cadence span b { color: #d7ed95; font-weight: 800; white-space: nowrap; }
 
-.crm-cadence span:nth-child(2) { transform: translateX(12px); }
-.crm-cadence span:nth-child(3) { transform: translateX(24px); }
+/* escada das etapas com margin (nunca transform): assim o card preserva
+   a margem interna e nada escapa do overflow: hidden do .crm-card */
+.crm-cadence span:nth-child(2) { margin-left: 0.75rem; }
+.crm-cadence span:nth-child(3) { margin-left: 1.5rem; }
 
 /* ==========================================================================
    8. Card "IA contextual" (substitui Tema e aparência)
@@ -910,7 +912,7 @@ body.splash-lock { overflow: hidden; }
   .crm-pipeline__track { flex-direction: column; align-items: flex-start; }
   .crm-arrow { display: none; }
   .crm-cadence span:nth-child(2),
-  .crm-cadence span:nth-child(3) { transform: none; }
+  .crm-cadence span:nth-child(3) { margin-left: 0; }
 
   .footer-trust { flex-direction: column; align-items: flex-start; }
 

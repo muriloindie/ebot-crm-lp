@@ -1228,8 +1228,57 @@
 .dm-editor { display: grid; grid-template-columns: minmax(0, 1fr) 268px; gap: 0.75rem; }
 @media (max-width: 1020px) { .dm-editor { grid-template-columns: 1fr; } }
 
+/* ---- Automações: o canvas preenche a altura toda e fica fixo, sem scrollbar.
+       A rolagem acontece só na coluna da direita (inspetor e fluxos publicados).
+       Para navegar dentro do canvas o usuário arrasta (ou usa as setas do teclado). ---- */
+@media (min-width: 1021px) {
+  .dm-scroll:has(.dm-screen[data-screen="flow"].is-active) {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .dm-screen[data-screen="flow"].is-active {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .dm-screen[data-screen="flow"] .dm-flow-toolbar { flex: 0 0 auto; }
+
+  .dm-screen[data-screen="flow"] .dm-editor {
+    flex: 1 1 auto;
+    min-height: 0;
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .dm-screen[data-screen="flow"] .dm-canvas {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    cursor: grab;
+    touch-action: none;
+    overscroll-behavior: contain;
+  }
+
+  .dm-screen[data-screen="flow"] .dm-canvas.is-dragging { cursor: grabbing; }
+
+  .dm-screen[data-screen="flow"] .dm-canvas:focus-visible {
+    outline: 2px solid rgba(var(--dt-primary), 0.55);
+    outline-offset: 2px;
+  }
+
+  .dm-screen[data-screen="flow"] .dm-inspector {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
 .dm-canvas {
   position: relative;
+  display: flex;
   overflow: auto;
   height: 380px;
   border-radius: 22px;
@@ -1248,7 +1297,13 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     rgba(var(--dt-surface), 0.5);
 }
-.dm-canvas-inner { position: relative; width: 1240px; height: 340px; }
+.dm-canvas-inner {
+  position: relative;
+  flex: 0 0 auto;
+  width: 1240px;
+  height: 340px;
+  margin-block: auto;
+}
 .dm-canvas-inner svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .dm-edge { fill: none; stroke: rgba(var(--dt-primary), 0.5); stroke-width: 2; stroke-dasharray: 8 8; animation: dmDash 14s linear infinite; }
 

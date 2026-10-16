@@ -562,6 +562,76 @@
   }
 
   /* ------------------------------------------------------------------
+     10b. Canvas de automações: arrastar para navegar (sem scrollbar)
+     ------------------------------------------------------------------ */
+  (function () {
+    var canvas = document.querySelector('.dm-screen[data-screen="flow"] .dm-canvas');
+    if (!canvas) return;
+
+    canvas.setAttribute("tabindex", "0");
+    canvas.setAttribute("role", "application");
+    canvas.setAttribute(
+      "aria-label",
+      "Canvas do fluxo de automação. Arraste com o mouse para navegar ou use as setas do teclado."
+    );
+
+    var dragging = false;
+    var moved = 0;
+    var startX = 0;
+    var startY = 0;
+    var startLeft = 0;
+    var startTop = 0;
+
+    canvas.addEventListener("pointerdown", function (e) {
+      if (e.button !== 0) return;
+      dragging = true;
+      moved = 0;
+      startX = e.clientX;
+      startY = e.clientY;
+      startLeft = canvas.scrollLeft;
+      startTop = canvas.scrollTop;
+      canvas.classList.add("is-dragging");
+    });
+
+    window.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - startX;
+      var dy = e.clientY - startY;
+      moved = Math.max(moved, Math.abs(dx) + Math.abs(dy));
+      canvas.scrollLeft = startLeft - dx;
+      canvas.scrollTop = startTop - dy;
+    });
+
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      canvas.classList.remove("is-dragging");
+    }
+
+    window.addEventListener("pointerup", endDrag);
+    window.addEventListener("pointercancel", endDrag);
+
+    // depois de arrastar, o clique não deve acionar um nó do fluxo
+    canvas.addEventListener("click", function (e) {
+      if (moved <= 6) return;
+      e.preventDefault();
+      e.stopPropagation();
+    }, true);
+
+    // alternativa de teclado para o arraste
+    canvas.addEventListener("keydown", function (e) {
+      var step = e.shiftKey ? 180 : 90;
+      if (e.key === "ArrowLeft") canvas.scrollLeft -= step;
+      else if (e.key === "ArrowRight") canvas.scrollLeft += step;
+      else if (e.key === "ArrowUp") canvas.scrollTop -= step;
+      else if (e.key === "ArrowDown") canvas.scrollTop += step;
+      else if (e.key === "Home") { canvas.scrollLeft = 0; canvas.scrollTop = 0; }
+      else return;
+      e.preventDefault();
+    });
+  })();
+
+  /* ------------------------------------------------------------------
      11. Init
      ------------------------------------------------------------------ */
 
