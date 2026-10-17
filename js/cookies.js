@@ -1,4 +1,4 @@
-// Banner de cookies (consentimento LGPD) — Ê-Bot Panel
+// Banner de cookies (consentimento LGPD) — Ê-Bot CRM
 // A escolha do visitante fica salva em localStorage; ao trocar o texto do banner,
 // basta incrementar a versão abaixo para reexibir o aviso.
 (function () {

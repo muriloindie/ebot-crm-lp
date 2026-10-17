@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Ê-Bot Panel — Upgrade de revisão (out/2026)
+   Ê-Bot CRM — Upgrade de revisão (out/2026)
    Splash screen · Banner de cookies · Selos Meta TechProvider ·
    Quem somos · Bloco de CRM exclusivo · Card IA contextual ·
    Reveal em stagger · Coreografia pós-splash · Modo canvas da demo
@@ -642,7 +642,7 @@ body.splash-lock { overflow: hidden; }
 .crm-card--dark p { color: rgba(247, 250, 239, 0.72); }
 .crm-card--dark .crm-icon { background: rgba(215, 237, 149, 0.14); color: #d7ed95; }
 
-/* ---------- animações dos cards de CRM (mesma linguagem dos cards do Panel) ---------- */
+/* ---------- animações dos cards de CRM (mesma linguagem dos cards do CRM) ---------- */
 
 .crm-card {
   transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);

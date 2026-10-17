@@ -154,7 +154,7 @@
 
 .dm-app { display: flex; height: 100%; min-height: 0; }
 
-/* --- rail (prévia compacta da section Panel) --- */
+/* --- rail (prévia compacta da section CRM) --- */
 .dm-rail {
   width: 74px;
   flex-shrink: 0;
@@ -1470,7 +1470,7 @@
 .dm-screen.is-active { display: block; }
 
 /* ==========================================================================
-   9. Mini-previews dos cards (seção Ê-Bot Panel)
+   9. Mini-previews dos cards (seção Ê-Bot CRM)
    Cada card exibe um recorte da tela real correspondente do sistema,
    montado com os mesmos tokens --dt-* do app.
    ========================================================================== */
@@ -1893,7 +1893,7 @@
 }
 
 /* ==========================================================================
-   10. Animações dos mini-previews (seção Ê-Bot Panel)
+   10. Animações dos mini-previews (seção Ê-Bot CRM)
    Cada preview roda um loop que reproduz o comportamento real da tela.
    Sem animação (reduced-motion) todos os estados base ficam legíveis.
    ========================================================================== */
