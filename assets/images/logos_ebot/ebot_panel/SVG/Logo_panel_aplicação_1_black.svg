@@ -54,7 +54,7 @@
     <path class="cls-6" d="M209.21,68.52v40.24"/>
     <path class="cls-5" d="M105.23,98.51s-13.42-.71-22.24-3.18-10.31,10.07-8.24,13.42,12.41,6.53,34.86,6.53,33.68-2.65,34.86-8.65c1.19-6-2.39-14.94-9.96-11.62-7.57,3.32-9.51,3.5-29.28,3.5Z"/>
     <text class="cls-4" transform="translate(292.08 94.3)"><tspan x="0" y="0">bot</tspan></text>
-    <text class="cls-3" transform="translate(243.81 143.99)"><tspan x="0" y="0">&lt;</tspan><tspan class="cls-7" x="24.48" y="0">P</tspan><tspan x="48.57" y="0">ANEL&gt;</tspan></text>
+    <text class="cls-3" transform="translate(243.81 143.99)"><tspan x="83" y="0" text-anchor="middle">&lt;CRM&gt;</tspan></text>
     <text class="cls-1" transform="translate(241.82 94.3)"><tspan x="0" y="0">ê</tspan></text>
   </g>
 </svg>

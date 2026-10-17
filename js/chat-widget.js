@@ -98,7 +98,7 @@ A função de renderização Replacehed substitui automaticamente o texto [BOTAO
       msgDiv.style.marginLeft = 'auto';
       msgDiv.style.flexDirection = 'row-reverse';
       msgDiv.innerHTML = `
-        <div aria-hidden="true" style="width: 46px; height: 46px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #3C5A45; box-shadow: 0 6px 16px rgba(60,72,68,0.2);"><iconify-icon icon="ph:user-fill" style="font-size: 1.62rem; color: #E3F2C7;"></iconify-icon></div>
+        <div aria-hidden="true" style="width: 30px; height: 30px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #3C5A45; box-shadow: 0 6px 16px rgba(60,72,68,0.2);"><iconify-icon icon="ph:user-fill" style="font-size: 1.1rem; color: #E3F2C7;"></iconify-icon></div>
         <div style="background: var(--primary, #88a72f); color: white; padding: 1rem 1.25rem; border-radius: 16px 0 16px 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-size: 0.95rem; line-height: 1.5; word-wrap: break-word;">
           ${escapeHtml(text)}
         </div>
