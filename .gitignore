@@ -42,3 +42,8 @@ documentação/
 
 # Docker test
 test-docker.sh
+
+# Agentes / ferramentas de IA (artefatos locais)
+.agents/
+.opencode/
+skills-lock.json
