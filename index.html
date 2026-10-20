@@ -987,6 +987,40 @@
       .chat-showcase { margin-inline: -0.65rem; border-radius: 1.4rem; }
       .final-cta-robot { min-height: 350px; }
     }
+
+    /* =====================================================================
+       Título "Somos a Ê-Sistemas…" — disposição em três linhas compactas,
+       cada fragmento em uma linha que nunca quebra no meio das marcas.
+       Ê-Sistemas em laranja da marca e Ê-Bot em verde, na fonte Cocogoose.
+       O tamanho deriva da largura da coluna (container query), então sempre cabe.
+       ===================================================================== */
+    .historia-copy { container-type: inline-size; }
+    .section-heading.who-we-heading {
+      font-size: clamp(1.35rem, 7.7cqw, 2.55rem) !important;
+      line-height: 1.06 !important;
+      letter-spacing: -0.015em;
+      max-width: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-wrap: initial;
+    }
+    .who-frag { display: block; white-space: nowrap; }
+    .brand-mark {
+      display: inline-block;
+      font-family: var(--font-brand);
+      font-weight: bold;
+      font-size: 1.08em;
+      line-height: 1;
+      letter-spacing: 0;
+      transform: translateY(-0.03em);
+      white-space: nowrap;
+    }
+    .brand-mark--esistemas { color: #f59f15; }
+    .brand-mark--ebot { color: #1da851; }
+    @supports not (font-size: 1cqw) {
+      .section-heading.who-we-heading { font-size: clamp(1.5rem, calc(1rem + 1.55vw), 2.05rem) !important; }
+    }
   </style>
 </head>
 <body>
@@ -1167,7 +1201,7 @@
           <div class="fusion-strip reveal-stagger" aria-label="Fluxo da solução">
             <div class="fusion-step" data-step="1"><strong>Centraliza</strong><span>Atendentes, filas por setor e contexto da conversa reunidos em um mesmo painel.</span></div>
             <div class="fusion-step" data-step="2"><strong>Automatiza</strong><span>A IA faz triagem, qualifica leads, envia mensagens e cria tarefas no funil.</span></div>
-            <div class="fusion-step" data-step="3"><strong>Integra</strong><span>A API oficial da Meta leva os dados do Ê-Bot CRM aos sistemas da empresa em tempo real.</span></div>
+            <div class="fusion-step" data-step="3"><strong>Integra</strong><span>Integramos os dados do Ebot CRM aos sistemas da empresa em tempo real.</span></div>
           </div>
         </div>
       </div>
@@ -1177,7 +1211,6 @@
       <div class="container reveal">
         <div class="panel-topline">
           <span class="section-eyebrow" style="margin-bottom: 0;">Ê-Bot CRM</span>
-          <span class="pill-new">Interface nova · redesign 2026</span>
         </div>
         <h2 class="section-heading h2">A camada operacional para times comerciais, suporte e relacionamento.</h2>
         <p class="section-lead">Organize conversas, distribua atendimentos, acompanhe o funil e dê contexto para cada pessoa da equipe antes de responder o cliente. Tudo em um painel com protocolo por atendimento, indicadores e acompanhamento em tempo real.</p>
@@ -1318,7 +1351,7 @@
                 <div class="fs-foot"><i></i>17 atendimentos ativos · ao vivo</div>
               </div>
             </div>
-            <h3>Operação em tempo real <span class="feature-flag feature-flag--inline">Novo</span></h3><p>Painel ao vivo com atendimentos ativos, fila por setor, leads sem responsável e a IA trabalhando.</p>
+            <h3>Operação em tempo real <span class="feature-flag feature-flag--inline">Novo</span></h3><p>Atendimento ao vivo: painel com fila por setor, conversas ativas no momento e a IA orquestrando tudo.</p>
           </article>
 
           <article class="feature-card">
@@ -1344,9 +1377,8 @@
                   <b><iconify-icon icon="ph:sparkle"></iconify-icon>Resumo da conversa</b>
                   <em>Ana quer antecipar a instalação. CEP 04171-030 · fibra 500 mega · janela na quinta às 14h.</em>
                 </div>
-                <div class="fs-msg fs-msg--in"><b>Ana Paula</b><span>Consigo antecipar a instalação ainda esta semana?</span></div>
                 <div class="fs-msg fs-msg--out fs-msg--suggest"><span>Consegui: quinta às 14h está livre na sua região. Posso reservar?</span></div>
-                <span class="fs-ctx-hint"><iconify-icon icon="ph:brain"></iconify-icon>Sugestão gerada com base no histórico, no CRM e na conversa atual</span>
+                <span class="fs-ctx-hint"><i class="fs-ctx-orb"><iconify-icon icon="ph:brain"></iconify-icon></i><span>Sugestão gerada com base no histórico, no CRM e na conversa atual</span></span>
               </div>
             </div>
             <h3>IA contextual <span class="feature-flag feature-flag--inline">Novo</span></h3><p>Resumo de conversas e sugestão de respostas com base no contexto. A IA lê o histórico, o CRM e a conversa atual para preparar cada atendimento.</p>
@@ -1381,7 +1413,7 @@
           <article class="crm-card crm-card--dark">
             <div class="crm-icon"><iconify-icon icon="ph:list-numbers" aria-hidden="true"></iconify-icon></div>
             <h3>Cadência e funil de automação</h3>
-            <p>Jornadas automáticas por etapa: mensagens, tarefas e avisos que acompanham o lead até a decisão, no ritmo certo do funil.</p>
+            <p>Jornadas automáticas por etapa: mensagens, tarefas e avisos que acompanham o lead até a decisão, no ritmo da sua operação.</p>
             <div class="crm-cadence" aria-hidden="true">
               <span><b>Etapa 1</b>Proposta enviada · registro no CRM</span>
               <span><b>Etapa 2</b>Follow-up automático no WhatsApp</span>
@@ -1404,7 +1436,7 @@
           <article class="crm-card">
             <div class="crm-icon"><iconify-icon icon="ph:video-camera" aria-hidden="true"></iconify-icon></div>
             <h3>Reunião no Meet, direto do CRM</h3>
-            <p>Agende sua reunião no Meet e compartilhe com seu lead no WhatsApp. O convite fica anexado ao protocolo do atendimento.</p>
+            <p>Agende sua reunião no Meet e compartilhe com seu lead no WhatsApp. O convite fica anexado na sua agenda.</p>
           </article>
 
           <article class="crm-card">
@@ -1416,13 +1448,13 @@
           <article class="crm-card">
             <div class="crm-icon"><iconify-icon icon="ph:activity" aria-hidden="true"></iconify-icon></div>
             <h3>Acompanhamento em tempo real</h3>
-            <p>Painel ao vivo com atendimentos ativos, fila por setor, leads sem responsável e IA a postos.</p>
+            <p>Painel de atendimento ao vivo: fila por setor, conversas ativas e IA a postos.</p>
           </article>
 
           <article class="crm-card crm-card--dark">
             <div class="crm-icon"><iconify-icon icon="ph:circuitry" aria-hidden="true"></iconify-icon></div>
             <h3>Tecnologia própria Ê-Sistemas</h3>
-            <p>Plataforma desenvolvida e mantida pela Ê-Sistemas: evolução contínua, suporte direto e dados hospedados no seu servidor.</p>
+            <p>Plataforma desenvolvida e mantida pela Ê-Sistemas: evolução contínua, suporte direto e dados hospedados com segurança.</p>
           </article>
         </div>
       </div>
@@ -2274,7 +2306,7 @@
             </svg>
             <div class="workflow-center"><img src="./assets/images/logos_ebot/ebot_panel/SVG/Icone_panel_white.svg" alt=""></div>
             <div class="flow-node one"><div class="flow-brand whatsapp"><iconify-icon icon="simple-icons:whatsapp" aria-hidden="true"></iconify-icon></div><strong>Mensagem recebida</strong><span>Cliente chega pelo WhatsApp e entra no fluxo certo.</span></div>
-            <div class="flow-node two"><div class="flow-brand"><iconify-icon icon="simple-icons:openai" aria-hidden="true"></iconify-icon></div><strong>IA qualifica</strong><span>Identifica intenção, urgência, produto e perfil do lead.</span></div>
+            <div class="flow-node two"><div class="flow-brand"><iconify-icon icon="material-symbols:smart-toy" aria-hidden="true"></iconify-icon></div><strong>IA qualifica</strong><span>Identifica intenção, urgência, produto e perfil do lead.</span></div>
             <div class="flow-node three"><div class="flow-brand ebot-brand"><img src="./assets/images/logos_ebot/ebot_api/SVG/Icone_api_white.svg" alt=""></div><strong>Sistema sincroniza</strong><span>Ê-Bot API atualiza o ERP ou a rotina interna.</span></div>
             <div class="flow-node four"><div class="flow-brand"><iconify-icon icon="ph:users-three-fill" aria-hidden="true"></iconify-icon></div><strong>Equipe assume</strong><span>Atendente recebe contexto, setor e próxima ação.</span></div>
           </div>
@@ -2296,7 +2328,7 @@
           <ul class="checklist" style="margin-top: 2rem;">
             <li>Endpoints REST para envio de mensagens e notificações.</li>
             <li>Webhooks em tempo real para entrega, leitura e respostas.</li>
-            <li>Operação com modalidade oficial e não oficial conforme estratégia.</li>
+            <li>Operação com modalidade oficial e web.</li>
             <li>Rastreabilidade para processos comerciais, financeiros e suporte.</li>
           </ul>
         </div>
@@ -2326,7 +2358,7 @@
         <div class="timeline">
           <div class="timeline-item"><div><strong>Diagnóstico da operação</strong><span>Mapeamos setores, filas, principais mensagens e integrações necessárias.</span></div><time>Etapa 1</time></div>
           <div class="timeline-item"><div><strong>Configuração do CRM</strong><span>Criamos usuários, funis, tags, departamentos, IA inicial e regras de atendimento.</span></div><time>Etapa 2</time></div>
-          <div class="timeline-item"><div><strong>API e webhooks</strong><span>Conectamos endpoints críticos ao CRM, ERP ou sistema interno da empresa.</span></div><time>Etapa 3</time></div>
+          <div class="timeline-item"><div><strong>API e webhooks</strong><span>Conectamos endpoints críticos ao ERP ou sistema interno da empresa.</span></div><time>Etapa 3</time></div>
           <div class="timeline-item"><div><strong>Treinamento e ajustes</strong><span>Validamos o seu fluxo com a equipe real e refinamos mensagens para conversão.</span></div><time>Etapa 4</time></div>
         </div>
       </div>
@@ -2354,7 +2386,11 @@
       <div class="container historia-grid reveal">
         <div class="historia-copy">
           <span class="section-eyebrow">Quem somos</span>
-          <h2 class="section-heading h2">Somos a Ê-Sistemas e desenvolvemos o Ê-Bot de ponta a ponta.</h2>
+          <h2 class="section-heading h2 who-we-heading">
+            <span class="who-frag">Somos a <span class="brand-mark brand-mark--esistemas">Ê-Sistemas</span></span>
+            <span class="who-frag">e desenvolvemos o <span class="brand-mark brand-mark--ebot">Ê-Bot</span></span>
+            <span class="who-frag">de ponta a ponta.</span>
+          </h2>
           <p class="section-lead">Não somos um revendedor de plataforma: o Ê-Bot nasceu dentro da Ê-Sistemas e evolui junto com a operação de quem vende e atende pelo WhatsApp todos os dias. Um produto feito perto do cliente, com suporte direto de quem o desenvolve.</p>
 
           <div class="historia-points reveal-stagger">
@@ -2387,7 +2423,7 @@
           <div class="collage-tile">
             <img class="esi-mark" src="assets/images/esistemas_logo.avif" alt="" aria-hidden="true" loading="lazy">
             <strong>Desenvolvido pela Ê-Sistemas</strong>
-            <span>Evolução contínua, suporte direto de quem o desenvolve e dados hospedados no seu servidor.</span>
+            <span>Evolução contínua, suporte direto de quem o desenvolve e dados hospedados com segurança.</span>
           </div>
         </div>
       </div>
